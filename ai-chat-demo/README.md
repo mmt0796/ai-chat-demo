@@ -90,9 +90,9 @@ VITE_API_BASE=/api
 ### 后端 (.env)
 
 ```env
-SPARK_APP_ID=your_app_id
-SPARK_API_KEY=your_api_key
-SPARK_API_SECRET=your_api_secret
+SPARK_APP_ID=您的app_id
+SPARK_API_KEY=您的api_key
+SPARK_API_SECRET=您的api_secret
 ```
 
 ## API 接口

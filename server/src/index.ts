@@ -8,7 +8,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const API_KEY = "BqNWrGTDTsFWmfvLlXFl:BGZMiyUSKfkWdlNhJTCe";
+const API_KEY = "修改为您的api_key";
 const USERS_FILE = "./src/data/users.json";
 
 interface User {
