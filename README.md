@@ -57,38 +57,26 @@ cd server
 npm install
 ```
 
-### 3. 启动后端
+### 3. 配置 API Key
+
+在 `server/src/index.ts` 文件中修改：
+
+```typescript
+const API_KEY = "您的api_key";
+```
+
+### 4. 启动后端
 
 ```bash
 cd server
 npm run dev
 ```
 
-### 4. 启动前端
+### 5. 启动前端
 
 ```bash
 cd ai-chat-demo
 npm run dev
-```
-
-## 环境配置
-
-### 前端 (.env)
-
-在 `ai-chat-demo` 目录创建 `.env`：
-
-```env
-VITE_API_BASE=/api
-```
-
-### 后端 (.env)
-
-在 `server` 目录创建 `.env`：
-
-```env
-SPARK_APP_ID=您的app_id
-SPARK_API_KEY=您的api_key
-SPARK_API_SECRET=您的api_secret
 ```
 
 ## API 接口
