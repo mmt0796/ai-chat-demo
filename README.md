@@ -1,6 +1,6 @@
 # AI Chat Demo
 
-基于 React + TypeScript + Vite + Zustand 的 AI 聊天应用，集成讯飞星火大模型 API。
+基于 React + TypeScript + Vite 的 AI 聊天应用，集成讯飞星火大模型 API。
 
 ## 功能特性
 
