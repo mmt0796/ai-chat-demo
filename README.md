@@ -26,68 +26,64 @@
 ## 项目结构
 
 ```
-ai-chat-demo/
-├── src/
-│   ├── api/           # API 请求
-│   │   ├── chat.ts    # 聊天接口
-│   │   ├── user.ts    # 用户接口
-│   │   └── request.ts # 请求封装
-│   ├── pages/         # 页面组件
-│   │   ├── Chat.tsx   # 聊天页面
-│   │   ├── Login.tsx  # 登录页面
-│   │   └── Register.tsx # 注册页面
-│   ├── store/         # 状态管理
-│   │   └── user.ts    # 用户状态
-│   ├── router/        # 路由配置
-│   │   └── index.tsx
-│   ├── App.tsx        # 根组件
-│   └── main.tsx       # 入口文件
-├── server/            # 后端服务
-│   └── src/
-│       ├── routes/    # API 路由
-│       ├── services/  # 业务逻辑
-│       └── data/      # 数据存储
-├── vite.config.ts     # Vite 配置
-└── package.json
+react-demo/
+├── ai-chat-demo/      # 前端项目
+│   ├── src/
+│   │   ├── api/       # API 请求
+│   │   ├── pages/     # 页面组件
+│   │   ├── store/     # 状态管理
+│   │   └── router/    # 路由配置
+│   └── vite.config.ts
+└── server/             # 后端服务
+    └── src/
+        ├── routes/    # API 路由
+        ├── services/  # 业务逻辑
+        └── data/      # 数据存储
 ```
 
 ## 快速开始
 
-### 安装依赖
+### 1. 安装前端依赖
 
 ```bash
+cd ai-chat-demo
 npm install
 ```
 
-### 启动后端
+### 2. 安装后端依赖
 
 ```bash
 cd server
 npm install
+```
+
+### 3. 启动后端
+
+```bash
+cd server
 npm run dev
 ```
 
-### 启动前端
+### 4. 启动前端
 
 ```bash
+cd ai-chat-demo
 npm run dev
-```
-
-### 构建生产版本
-
-```bash
-npm run build
 ```
 
 ## 环境配置
 
 ### 前端 (.env)
 
+在 `ai-chat-demo` 目录创建 `.env`：
+
 ```env
 VITE_API_BASE=/api
 ```
 
 ### 后端 (.env)
+
+在 `server` 目录创建 `.env`：
 
 ```env
 SPARK_APP_ID=您的app_id
