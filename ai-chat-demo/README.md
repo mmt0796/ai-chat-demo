@@ -1,73 +1,108 @@
-# React + TypeScript + Vite
+# AI Chat Demo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+基于 React + TypeScript + Vite 的 AI 聊天应用，集成讯飞星火大模型 API。
 
-Currently, two official plugins are available:
+## 功能特性
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- 💬 **实时对话** - 支持与 AI 进行流式对话
+- ⏹️ **停止生成** - 可随时中断 AI 回复
+- 📜 **自动滚动** - 消息自动滚动到底部
+- 🔐 **用户认证** - 登录/注册功能
+- 🎨 **Markdown 支持** - AI 回复支持 Markdown 渲染
+- 📱 **响应式布局** - 适配不同屏幕尺寸
 
-## React Compiler
+## 技术栈
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+| 技术 | 说明 |
+|------|------|
+| React 19 | UI 框架 |
+| TypeScript | 类型安全 |
+| Vite | 打包工具 |
+| Ant Design 5 | UI 组件库 |
+| React Router | 路由管理 |
+| Zustand | 状态管理 |
+| 讯飞星火 API | AI 大模型 |
 
-## Expanding the ESLint configuration
+## 项目结构
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+ai-chat-demo/
+├── src/
+│   ├── api/           # API 请求
+│   │   ├── chat.ts    # 聊天接口
+│   │   ├── user.ts    # 用户接口
+│   │   └── request.ts # 请求封装
+│   ├── pages/         # 页面组件
+│   │   ├── Chat.tsx   # 聊天页面
+│   │   ├── Login.tsx  # 登录页面
+│   │   └── Register.tsx # 注册页面
+│   ├── store/         # 状态管理
+│   │   └── user.ts    # 用户状态
+│   ├── router/        # 路由配置
+│   │   └── index.tsx
+│   ├── App.tsx        # 根组件
+│   └── main.tsx       # 入口文件
+├── server/            # 后端服务
+│   └── src/
+│       ├── routes/    # API 路由
+│       ├── services/  # 业务逻辑
+│       └── data/      # 数据存储
+├── vite.config.ts     # Vite 配置
+└── package.json
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 快速开始
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 安装依赖
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
+
+### 启动后端
+
+```bash
+cd server
+npm install
+npm run dev
+```
+
+### 启动前端
+
+```bash
+npm run dev
+```
+
+### 构建生产版本
+
+```bash
+npm run build
+```
+
+## 环境配置
+
+### 前端 (.env)
+
+```env
+VITE_API_BASE=/api
+```
+
+### 后端 (.env)
+
+```env
+SPARK_APP_ID=your_app_id
+SPARK_API_KEY=your_api_key
+SPARK_API_SECRET=your_api_secret
+```
+
+## API 接口
+
+| 接口 | 方法 | 说明 |
+|------|------|------|
+| `/api/register` | POST | 用户注册 |
+| `/api/login` | POST | 用户登录 |
+| `/api/chat` | POST | AI 对话 |
+
+## 许可证
+
+MIT
